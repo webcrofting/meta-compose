@@ -30,17 +30,6 @@ install_requires = [
 ]
 
 
-tests_require = [
-    'mock >= 1.0.1',
-    'nose',
-    'pyinstaller',
-    'flake8',
-]
-
-
-if sys.version_info < (2, 7):
-    tests_require.append('unittest2')
-
 
 setup(
     name='meta-compose',
@@ -51,9 +40,7 @@ setup(
     license='Apache License 2.0',
     packages=find_packages(exclude=['tests.*', 'tests']),
     include_package_data=True,
-    test_suite='nose.collector',
     install_requires=install_requires,
-    tests_require=tests_require,
     entry_points="""
     [console_scripts]
     meta-compose=metacompose.cli.main:main
