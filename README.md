@@ -4,6 +4,8 @@ This package aims to solve the problem of variable substitution in
 docker-compose files by parsing them as [Jinja2](http://jinja.pocoo.org/)
 template.
 
+It was inspired by the discussion [here](https://github.com/docker/compose/issues/1377)
+
 It supports variable declaration in a separate YAML file as well as
 access to environment variables.
 
