@@ -22,6 +22,16 @@ access to environment variables.
 - Call `meta-compose` and it will create a docker-compose.yml in the current
   directory
 
+```
+usage: meta-compose [-h] [-d DATAFILE]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DATAFILE, --datafile DATAFILE
+                        Use to specify data files in addition to meta-compose-
+                        data.yml. They must be JSON or YAML files.
+```
+
 ## Syntax of meta-compose.yml
 
 - Everything in basic [Jinja2](http://jinja.pocoo.org/) is allowed.
