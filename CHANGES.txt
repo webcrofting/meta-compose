@@ -1,1 +1,3 @@
 v0.1.0, 2015-06-06 -- Initial release.
+v0.1.1, 2015-06-10 -- Make meta-compose-data.yml optional
+v0.1.2, 2015-07-13 -- Allow multiple data files
