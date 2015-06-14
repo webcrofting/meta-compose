@@ -4,12 +4,13 @@ This package aims to solve the problem of variable substitution in
 docker-compose files by parsing them as [Jinja2](http://jinja.pocoo.org/)
 template.
 
-It was inspired by the discussion [here](https://github.com/docker/compose/issues/1377)
+It was inspired by the discussion
+[here](https://github.com/docker/compose/issues/1377)
 
 It supports variable declaration in a separate YAML file as well as
 access to environment variables.
 
-## Usage:
+## Quickstart:
 
 - Install with `pip install meta-compose`
 
@@ -22,14 +23,22 @@ access to environment variables.
 - Call `meta-compose` and it will create a docker-compose.yml in the current
   directory
 
+## Usage
+
 ```
-usage: meta-compose [-h] [-d DATAFILE]
+usage: meta-compose [-h] [-d DATAFILE] [-t TEMPLATE] [-o OUTPUTFILE]
 
 optional arguments:
   -h, --help            show this help message and exit
   -d DATAFILE, --datafile DATAFILE
                         Use to specify data files in addition to meta-compose-
                         data.yml. They must be JSON or YAML files.
+  -t TEMPLATE, --template TEMPLATE
+                        Use to specify the template file to use. Defaults to
+                        ./meta-compose.yml
+  -o OUTPUTFILE, --outputfile OUTPUTFILE
+                        Use to specify the output file to create. Defaults to
+                        ./docker-compose.yml
 ```
 
 ## Syntax of meta-compose.yml
