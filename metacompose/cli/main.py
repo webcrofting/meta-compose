@@ -11,17 +11,32 @@ def main():
 
     parser = argparse.ArgumentParser()
 
-    template_file_name = "meta-compose.yml"
-    data_file_names = ["meta-compose-data.yml"]
-
     parser.add_argument(
       "-d", "--datafile", action='append',
-      help="Use to specify data files in addition to meta-compose-data.yml."
-           " They must be JSON or YAML files.")
+      default=[],
+      help="Use to specify data files in addition to meta-compose-data.yml. "
+           "They must be JSON or YAML files.")
+
+    parser.add_argument(
+      "-t", "--template",
+      default="./meta-compose.yml",
+      help="Use to specify the template file to use. "
+           "Defaults to ./meta-compose.yml")
+
+    parser.add_argument(
+      "-o", "--outputfile",
+      default="./docker-compose.yml",
+      help="Use to specify the output file to create. "
+           "Defaults to ./docker-compose.yml")
 
     args = parser.parse_args()
 
-    data_file_names += args.datafile
+
+    template_file_name = args.template
+    output_file_name = args.outputfile
+    data_file_names = ["meta-compose-data.yml"] + args.datafile
+
+
 
     jinja = Environment(loader=FileSystemLoader("."), undefined=StrictUndefined)
     jinja.filters['env'] = env_override
@@ -36,5 +51,5 @@ def main():
 
     composition = template.render(data)
 
-    with open("docker-compose.yml", "w") as fh:
+    with open(output_file_name, "w") as fh:
         fh.write(composition)
