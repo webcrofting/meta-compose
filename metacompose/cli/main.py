@@ -7,7 +7,7 @@ import argparse
 def env_override(value, key):
   return os.getenv(key, value)
 
-def main():
+def parse_args():
 
     parser = argparse.ArgumentParser()
 
@@ -29,27 +29,36 @@ def main():
       help="Use to specify the output file to create. "
            "Defaults to ./docker-compose.yml")
 
-    args = parser.parse_args()
+    return parser.parse_args()
 
-
-    template_file_name = args.template
-    output_file_name = args.outputfile
-    data_file_names = ["meta-compose-data.yml"] + args.datafile
-
-
+def setup_jinja(template_file_name):
 
     jinja = Environment(loader=FileSystemLoader("."), undefined=StrictUndefined)
     jinja.filters['env'] = env_override
-    template = jinja.get_template(template_file_name)
+    return jinja.get_template(template_file_name)
+
+def collect_data(data_file_names):
 
     data = {}
     for data_file_name in data_file_names:
         if os.path.isfile(data_file_name):
             with open(data_file_name, "r") as fh:
                 data.update(yaml.safe_load(fh))
+    return data
 
+def write_compose_file(composition, outputfile):
 
-    composition = template.render(data)
-
-    with open(output_file_name, "w") as fh:
+    with open(outputfile, "w") as fh:
         fh.write(composition)
+
+
+
+def main():
+
+    args = parse_args()
+
+
+    template = setup_jinja(args.template)
+    data = collect_data(["meta-compose-data.yml"] + args.datafile)
+
+    write_compose_file(template.render(data), args.outputfile)
