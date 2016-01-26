@@ -1,3 +1,4 @@
+import glob
 import sys
 import os
 import yaml
@@ -6,6 +7,11 @@ import argparse
 
 def env_override(value, key):
   return os.getenv(key, value)
+
+
+def fileglob(pathname):
+    return glob.glob(pathname)
+
 
 def parse_args():
 
@@ -35,6 +41,7 @@ def setup_jinja(template_file_name):
 
     jinja = Environment(loader=FileSystemLoader("."), undefined=StrictUndefined)
     jinja.filters['env'] = env_override
+    jinja.filters['fileglob'] = fileglob
     return jinja.get_template(template_file_name)
 
 def collect_data(data_file_names):
