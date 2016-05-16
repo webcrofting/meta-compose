@@ -14,3 +14,13 @@ build:
     - javaHome={{'dog'| env('JAVA_HOME')}}
 
 {%- endfor %}
+
+<start>
+{% for key, value in linksList.items() recursive %}
+{{loop.depth}}> {%- if value is string -%}
+- {{key}} : "{{ value }}"
+   {%- else -%}
+{{ key }} : {{ loop(value.items()) }}
+   {%- endif -%} 
+{% endfor %}
+</end>

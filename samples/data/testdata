@@ -3,5 +3,28 @@
       world : "Hello World" ,
       'on': false
       },
-  seq: [1,2,3,4,5,6]
+  seq: [1,2,3,4,5,6],
+
+  linksList: {
+    "Google":{
+    "Web":"www.web.de",
+    "Apps":{
+        "Drive": "DriveLink",
+        "Dropbox": "DropboxLink"
+    },
+    "Google Main":"http://mail.google.com",
+    "G+":"http://plus.google.com"
+    },  
+    "Social":{
+    "Facebook":"http://www.facebook.de",
+    "G+":"https://plus.google.com",
+    "Xing":"http://www.xing.de",
+    "LinkedIn":"http://www.linkedin.com",
+    "Tumblr":"http://www.tumblr.com"
+    },
+    "Fun":{
+    "Reddit":"http://www.reddit.com"
+    }
+  }
+
 }
