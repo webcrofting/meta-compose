@@ -1,3 +1,3 @@
 #!/usr/bin/env python
-from metacompose.cli.main import main
+from metacompose.cli import main
 main()
