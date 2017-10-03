@@ -56,5 +56,6 @@ python meta-compose.py -d samples/data/testdata -t samples/template/meta-compose
 
 python meta-compose.py -t samples/template/gateway.tmpl -d samples/data/gateway.json -o samples/output/gateway.properties
 
+python meta-compose.py -t samples/template/app.tmpl -d samples/data/app.json -o samples/output/app.js
 
 ```

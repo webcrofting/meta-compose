@@ -1,63 +1,12 @@
-{
-    gateway: {
-        debug: 'false',
-        host: "gw.cp.wmcloud-docker.com",
-        port: 8081,
-        db: {
-            host: "10.21.234.42",
-            port: "6379",
-            database: 0,
-            password: "",
-            statistic: {
-                host: "10.21.234.42",
-                port: 6379,
-                database: 3,
-                password: ""
-            },
-            maxTotal: 10,
-            maxIdle: 10
-        },
-        statsd: {
-            host: "127.0.0.1",
-            port: 8125
-        },
-        idp: { url: "http://app.cp.wmcloud-docker.com/login.html" },
-        connection: { pool: 100 },
-        route: { pool: 30 },
-        timeout: 90,
-        resource: { base: "/errorpage" },
-        thread: { pool: 4096 },
-        phantomScript: { path: "/opt/seo.js" },
-        authorization: { endpoint: "http://10.20.131.232:9764/authorizationService/authorize" },
-        cloud: { domain: ".wmcloud-docker.com" },
-        mq: {
-            host: "10.21.234.43",
-            vhost: "/gateway",
-            port: 5672,
-            username: "gateway",
-            password: "gateway_pass",
-        },
-        cors: { hosts: "app.cp.wmcloud-docker.com,127.0.0.1,localhost,10.21.234.41" },
-        api: { authurl: "http://127.0.0.1:8080/authority" },
-        health: {
-            check: {
-                port: 8081,
-                rate: 300000,
-                redis: {
-                    host: "10.21.234.42",
-                    port: 6379,
-                    db: 5,
-                    password: ""
-                },
-                cluster: "gateway",
-                nodeid: 1,
-                window: 320000
-            },
-            status: {
-                green: 20,
-                yellow: 40
+{ "gateway":
+ {"debug": "false","host": "gw.cp.wmcloud-docker.com","port": 8081,"db": {"host": "10.21.234.42","port": "6379","database": 0,"password": "","statistic": {"host": "10.21.234.42","port": 6379,"database": 3,"password": ""
+            },"maxTotal": 10,"maxIdle": 10
+        },"statsd": {"host": "127.0.0.1","port": 8125
+        },"idp": {"url": "http://app.cp.wmcloud-docker.com/login.html" },"connection": {"pool": 100 },"route": {"pool": 30 },"timeout": 90,"resource": {"base": "/errorpage" },"thread": {"pool": 4096 },"phantomScript": {"path": "/opt/seo.js" },"authorization": {"endpoint": "http://10.20.131.232:9764/authorizationService/authorize" },"cloud": {"domain": ".wmcloud-docker.com" },"mq": {"host": "10.21.234.43","vhost": "/gateway","port": 5672,"username": "gateway","password": "gateway_pass"
+        },"cors": {"hosts": "app.cp.wmcloud-docker.com,127.0.0.1,localhost,10.21.234.41" },"api": {"authurl": "http://127.0.0.1:8080/authority" },"health": {"check": {"port": 8081,"rate": 300000,"redis": {"host": "10.21.234.42","port": 6379,"db": 5,"password": ""
+                },"cluster": "gateway","nodeid": 1,"window": 320000
+            },"status": {"green": 20,"yellow": 40
             }
-        },
-        aop: { timer: { 'on': 'false' } },
+        },"aop": {"timer": { "on": "false" } }
     }
 }
