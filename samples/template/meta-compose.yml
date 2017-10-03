@@ -1,0 +1,26 @@
+{% for item in seq -%}
+
+build:
+  args:
+    buildno: {{item}}
+    user: {{hello.world}}
+    check: {{hello.on}}
+    javaHome: {{'cat'| env('JAVA_HOME')}}
+
+build:
+  args:
+    - buildno={{item}}
+    - user={{hello.world}}
+    - javaHome={{'dog'| env('JAVA_HOME')}}
+
+{%- endfor %}
+
+<start>
+{% for key, value in linksList.items() recursive %}
+{{loop.depth}}> {%- if value is string -%}
+- {{key}} : "{{ value }}"
+   {%- else -%}
+{{ key }} : {{ loop(value.items()) }}
+   {%- endif -%} 
+{% endfor %}
+</end>

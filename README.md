@@ -48,3 +48,14 @@ optional arguments:
 - To access environment variables use `{{'default'| env('VARIABLE_NAME')}}`
   where `VARIABLE_NAME` is the name of your environment variable and `default`
   is the default value you want it to be if the environment variable is not set.
+
+
+## Sample
+```
+python meta-compose.py -d samples/data/testdata -t samples/template/meta-compose.yml -o samples/output/docker-compose.yml
+
+python meta-compose.py -t samples/template/gateway.tmpl -d samples/data/gateway.json -o samples/output/gateway.properties
+
+python meta-compose.py -t samples/template/app.tmpl -d samples/data/app.json -o samples/output/app.js
+
+```

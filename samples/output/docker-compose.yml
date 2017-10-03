@@ -1,0 +1,86 @@
+build:
+  args:
+    buildno: 1
+    user: Hello World
+    check: False
+    javaHome: C:\Program Files\Java\jdk1.8.0_65
+
+build:
+  args:
+    - buildno=1
+    - user=Hello World
+    - javaHome=C:\Program Files\Java\jdk1.8.0_65build:
+  args:
+    buildno: 2
+    user: Hello World
+    check: False
+    javaHome: C:\Program Files\Java\jdk1.8.0_65
+
+build:
+  args:
+    - buildno=2
+    - user=Hello World
+    - javaHome=C:\Program Files\Java\jdk1.8.0_65build:
+  args:
+    buildno: 3
+    user: Hello World
+    check: False
+    javaHome: C:\Program Files\Java\jdk1.8.0_65
+
+build:
+  args:
+    - buildno=3
+    - user=Hello World
+    - javaHome=C:\Program Files\Java\jdk1.8.0_65build:
+  args:
+    buildno: 4
+    user: Hello World
+    check: False
+    javaHome: C:\Program Files\Java\jdk1.8.0_65
+
+build:
+  args:
+    - buildno=4
+    - user=Hello World
+    - javaHome=C:\Program Files\Java\jdk1.8.0_65build:
+  args:
+    buildno: 5
+    user: Hello World
+    check: False
+    javaHome: C:\Program Files\Java\jdk1.8.0_65
+
+build:
+  args:
+    - buildno=5
+    - user=Hello World
+    - javaHome=C:\Program Files\Java\jdk1.8.0_65build:
+  args:
+    buildno: 6
+    user: Hello World
+    check: False
+    javaHome: C:\Program Files\Java\jdk1.8.0_65
+
+build:
+  args:
+    - buildno=6
+    - user=Hello World
+    - javaHome=C:\Program Files\Java\jdk1.8.0_65
+
+<start>
+
+1>Fun : 
+2>- Reddit : "http://www.reddit.com"
+1>Google : 
+2>- Web : "www.web.de"
+2>- Google Main : "http://mail.google.com"
+2>Apps : 
+3>- Dropbox : "DropboxLink"
+3>- Drive : "DriveLink"
+2>- G+ : "http://plus.google.com"
+1>Social : 
+2>- Tumblr : "http://www.tumblr.com"
+2>- Facebook : "http://www.facebook.de"
+2>- G+ : "https://plus.google.com"
+2>- Xing : "http://www.xing.de"
+2>- LinkedIn : "http://www.linkedin.com"
+</end>
