@@ -1,3 +1,9 @@
+# [ARCHIVED] meta-compose
+
+This package allowed users to do variable substitution with docker compose. Docker has since added this as a feature and is documented here: [Variable Interpolation](https://docs.docker.com/compose/compose-file/12-interpolation/). 
+
+This project will be archived from PyPi on 5/5/2023. Thank you all for your interest!
+
 # meta-compose
 
 This package aims to solve the problem of variable substitution in
